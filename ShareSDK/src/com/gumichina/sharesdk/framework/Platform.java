@@ -3,6 +3,7 @@ package com.gumichina.sharesdk.framework;
 import java.util.HashMap;
 
 import android.content.Context;
+import android.content.Intent;
 
 public abstract class Platform
 {
@@ -58,4 +59,6 @@ public abstract class Platform
 	public abstract void showUser(String param);
 
 	public abstract void share(HashMap<String, Object> hash);
+
+	public abstract void handleIntent(Intent intent, Object object);
 }

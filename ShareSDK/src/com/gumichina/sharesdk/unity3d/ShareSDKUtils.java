@@ -43,8 +43,7 @@ public class ShareSDKUtils
 
 		if (context == null)
 		{
-			context = appContext != null ? appContext.getApplicationContext() : UnityPlayer.currentActivity
-					.getApplicationContext();
+			context = appContext != null ? appContext : UnityPlayer.currentActivity;
 		}
 		if (uiCallback == null)
 		{

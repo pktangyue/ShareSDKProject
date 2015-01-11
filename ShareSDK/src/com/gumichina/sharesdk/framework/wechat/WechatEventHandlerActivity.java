@@ -21,8 +21,7 @@ public class WechatEventHandlerActivity extends Activity implements IWXAPIEventH
 	{
 		super.onCreate(savedInstanceState);
 
-		Platform platform = ShareSDK.getPlatform(PlatformType.WechatTimeline);
-		((PlatformWechatTimeline) platform).getIWXAPI().handleIntent(getIntent(), this);
+		ShareSDK.getPlatform(PlatformType.WechatTimeline).handleIntent(getIntent(), this);
 	}
 
 	@Override
@@ -32,8 +31,7 @@ public class WechatEventHandlerActivity extends Activity implements IWXAPIEventH
 
 		setIntent(intent);
 
-		Platform platform = ShareSDK.getPlatform(PlatformType.WechatTimeline);
-		((PlatformWechatTimeline) platform).getIWXAPI().handleIntent(getIntent(), this);
+		ShareSDK.getPlatform(PlatformType.WechatTimeline).handleIntent(getIntent(), this);
 	}
 
 	// 微信发送请求到第三方应用时，会回调到该方法

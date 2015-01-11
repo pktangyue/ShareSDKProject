@@ -3,10 +3,12 @@ package com.gumichina.sharesdk.framework.wechat;
 import java.util.HashMap;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.gumichina.sharesdk.framework.Platform;
 import com.gumichina.sharesdk.framework.PlatformType;
 import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.SendMessageToWX;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.openapi.WXMediaMessage;
@@ -14,14 +16,8 @@ import com.tencent.mm.sdk.openapi.WXTextObject;
 
 public class PlatformWechatTimeline extends Platform
 {
-	String app_id;
 
 	private IWXAPI api;
-
-	public IWXAPI getIWXAPI()
-	{
-		return api;
-	}
 
 	public PlatformWechatTimeline(Context paramContext)
 	{
@@ -34,7 +30,7 @@ public class PlatformWechatTimeline extends Platform
 	public void setPlatformDevInfo(HashMap<String, Object> devInfo)
 	{
 		// TODO Auto-generated method stub
-		app_id = devInfo.get("app_id").toString();
+		String app_id = devInfo.get("app_id").toString();
 
 		api = WXAPIFactory.createWXAPI(context, app_id, true);
 
@@ -89,6 +85,13 @@ public class PlatformWechatTimeline extends Platform
 
 		api.sendReq(req);
 
+	}
+
+	@Override
+	public void handleIntent(Intent intent, Object object)
+	{
+		// TODO Auto-generated method stub
+		api.handleIntent(intent, (IWXAPIEventHandler) object);
 	}
 
 }
