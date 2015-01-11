@@ -59,19 +59,7 @@ public class Demo : MonoBehaviour {
 		btnTop += btnHeight + 20 * scale;
 		if (GUI.Button(new Rect((Screen.width - btnWidth) / 2, btnTop, btnWidth, btnHeight), "Share Weibo"))
 		{
-			Hashtable content = new Hashtable();
-			content["text"] = "this is a test string.";
-			content["image"] = "http://img.baidu.com/img/image/zhenrenmeinv0207.jpg";
-			content["title"] = "test title";
-			content["description"] = "test description";
-			content["url"] = "http://sharesdk.cn";
-			content["type"] = Convert.ToString((int)ContentType.News);
-			content["siteUrl"] = "http://sharesdk.cn";
-			content["site"] = "ShareSDK";
-			content["musicUrl"] = "http://mp3.mwap8.com/destdir/Music/2009/20090601/ZuiXuanMinZuFeng20090601119.mp3";
-			
-			ShareResultEvent evt = new ShareResultEvent(ShareResultHandler);
-			ShareSDK.shareContent (PlatformType.SinaWeibo, content, evt);
+			StartCoroutine(CaptureCamera2());
 		}
 
 		btnTop += btnHeight + 20 * scale;
@@ -128,6 +116,53 @@ public class Demo : MonoBehaviour {
 		
 		ShareResultEvent evt = new ShareResultEvent(ShareResultHandler);
 		ShareSDK.shareContent (PlatformType.WeChatTimeline, content, evt);
+		
+	}  
+
+	IEnumerator CaptureCamera2()   
+	{  
+		Rect rect = new Rect();
+		rect.width = Screen.width;
+		rect.height = Screen.height;
+		yield return new WaitForEndOfFrame();
+		// 创建一个RenderTexture对象  
+		RenderTexture rt = new RenderTexture((int)rect.width, (int)rect.height, 100);  
+		// 临时设置相关相机的targetTexture为rt, 并手动渲染相关相机  
+		camera.targetTexture = rt;  
+		camera.Render();  
+		//ps: --- 如果这样加上第二个相机，可以实现只截图某几个指定的相机一起看到的图像。  
+		//ps: camera2.targetTexture = rt;  
+		//ps: camera2.Render();  
+		//ps: -------------------------------------------------------------------  
+		
+		// 激活这个rt, 并从中中读取像素。  
+		RenderTexture.active = rt;  
+		Texture2D screenShot = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.RGB24,false);  
+		screenShot.ReadPixels(rect, 0, 0);// 注：这个时候，它是从RenderTexture.active中读取像素  
+		screenShot.Apply();  
+		
+		// 重置相关参数，以使用camera继续在屏幕上显示  
+		camera.targetTexture = null;  
+		//ps: camera2.targetTexture = null;  
+		RenderTexture.active = null; // JC: added to avoid errors  
+		GameObject.Destroy(rt);  
+		// 最后将这些纹理数据，成一个png图片文件  
+		byte[] bytes = screenShot.EncodeToPNG();  
+		//string filename = Application.dataPath + "/Screenshot.png";  
+		//System.IO.File.WriteAllBytes(filename, bytes);  
+		//Debug.Log(string.Format("截屏了一张照片: {0}", filename));  
+		
+		yield return new WaitForEndOfFrame();
+		
+		Hashtable content = new Hashtable();
+		content["text"] = "this is a test string.";
+		content["title"] = "test title";
+		content["description"] = "test description";
+		content["url"] = "http://www.gumichina.com";
+		content["imageData"] = bytes;
+
+		ShareResultEvent evt = new ShareResultEvent(ShareResultHandler);
+		ShareSDK.shareContent (PlatformType.SinaWeibo, content, evt);
 		
 	}  
 	

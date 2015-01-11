@@ -1,5 +1,6 @@
 package com.gumichina.sharesdk.framework.sinaweibo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -8,7 +9,9 @@ import android.content.Intent;
 
 import com.gumichina.sharesdk.framework.Platform;
 import com.gumichina.sharesdk.framework.PlatformType;
+import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.TextObject;
+import com.sina.weibo.sdk.api.WebpageObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.api.share.IWeiboHandler.Response;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
@@ -66,16 +69,35 @@ public class PlatformSinaWeibo extends Platform
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void share(HashMap<String, Object> hash)
 	{
 		// TODO Auto-generated method stub
 
-		TextObject textObject = new TextObject();
-		textObject.text = hash.get("text").toString();
-
 		WeiboMultiMessage weiboMessage = new WeiboMultiMessage();
-		weiboMessage.textObject = textObject;
+
+		String text = hash.get("text").toString();
+		if (!text.isEmpty())
+		{
+			TextObject textObject = new TextObject();
+			textObject.text = text;
+			weiboMessage.textObject = textObject;
+		}
+
+		byte[] bytes = convertBytes((ArrayList<Integer>) hash.get("imageData"));
+		if (bytes.length > 0)
+		{
+			ImageObject imageObject = new ImageObject();
+			imageObject.imageData = bytes;
+			weiboMessage.imageObject = imageObject;
+		}
+
+		WebpageObject webpageObject = new WebpageObject();
+		webpageObject.title = hash.get("title").toString();
+		webpageObject.description = hash.get("description").toString();
+		webpageObject.actionUrl = hash.get("url").toString();
+		// weiboMessage.mediaObject = webpageObject;
 
 		SendMultiMessageToWeiboRequest request = new SendMultiMessageToWeiboRequest();
 		request.transaction = String.valueOf(System.currentTimeMillis());
