@@ -1,5 +1,6 @@
 package com.gumichina.sharesdk.framework.wechat;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.content.Context;
@@ -11,8 +12,10 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.SendMessageToWX;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.mm.sdk.openapi.WXImageObject;
 import com.tencent.mm.sdk.openapi.WXMediaMessage;
 import com.tencent.mm.sdk.openapi.WXTextObject;
+import com.tencent.mm.sdk.openapi.WXWebpageObject;
 
 public class PlatformWechatTimeline extends Platform
 {
@@ -65,18 +68,25 @@ public class PlatformWechatTimeline extends Platform
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void share(HashMap<String, Object> hash)
 	{
-		String text = hash.get("text").toString();
-
 		// TODO Auto-generated method stub
-		WXTextObject textObj = new WXTextObject();
-		textObj.text = text;
+
+		// WXImageObject image = new WXImageObject();
+		// image.imageData = convertBytes((ArrayList<Integer>)
+		// hash.get("imageData"));
+		// image.imagePath = (String) hash.get("imageFilePath");
+
+		WXWebpageObject webpage = new WXWebpageObject();
+		webpage.webpageUrl = hash.get("url").toString();
 
 		WXMediaMessage msg = new WXMediaMessage();
-		msg.mediaObject = textObj;
-		msg.description = text;
+		msg.mediaObject = webpage;
+		msg.title = hash.get("title").toString();
+		msg.description = hash.get("description").toString();
+		msg.thumbData = convertBytes((ArrayList<Integer>) hash.get("imageData"));
 
 		SendMessageToWX.Req req = new SendMessageToWX.Req();
 		req.transaction = String.valueOf(System.currentTimeMillis());
@@ -84,7 +94,6 @@ public class PlatformWechatTimeline extends Platform
 		req.scene = SendMessageToWX.Req.WXSceneTimeline;
 
 		api.sendReq(req);
-
 	}
 
 	@Override

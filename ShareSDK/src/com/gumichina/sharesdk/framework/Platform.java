@@ -1,6 +1,8 @@
 package com.gumichina.sharesdk.framework;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import android.content.Context;
 import android.content.Intent;
@@ -61,4 +63,15 @@ public abstract class Platform
 	public abstract void share(HashMap<String, Object> hash);
 
 	public abstract void handleIntent(Intent intent, Object object);
+
+	protected byte[] convertBytes(ArrayList<Integer> list)
+	{
+		byte[] ret = new byte[list.size()];
+		Iterator<Integer> iterator = list.iterator();
+		for (int i = 0; i < ret.length; i++)
+		{
+			ret[i] = iterator.next().byteValue();
+		}
+		return ret;
+	}
 }
