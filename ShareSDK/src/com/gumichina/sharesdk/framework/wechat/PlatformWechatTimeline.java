@@ -74,19 +74,19 @@ public class PlatformWechatTimeline extends Platform
 	{
 		// TODO Auto-generated method stub
 
-		// WXImageObject image = new WXImageObject();
-		// image.imageData = convertBytes((ArrayList<Integer>)
-		// hash.get("imageData"));
-		// image.imagePath = (String) hash.get("imageFilePath");
+		 WXImageObject image = new WXImageObject();
+		 image.imageData = convertBytes((ArrayList<Integer>)
+		 hash.get("imageData"));
+		 image.imagePath = (String) hash.get("imageFilePath");
 
-		WXWebpageObject webpage = new WXWebpageObject();
-		webpage.webpageUrl = hash.get("url").toString();
+//		WXWebpageObject webpage = new WXWebpageObject();
+//		webpage.webpageUrl = hash.get("url").toString();
 
 		WXMediaMessage msg = new WXMediaMessage();
-		msg.mediaObject = webpage;
+		msg.mediaObject = image;
 		msg.title = hash.get("title").toString();
 		msg.description = hash.get("description").toString();
-		msg.thumbData = convertBytes((ArrayList<Integer>) hash.get("imageData"));
+		//msg.thumbData = convertBytes((ArrayList<Integer>) hash.get("imageData"));
 
 		SendMessageToWX.Req req = new SendMessageToWX.Req();
 		req.transaction = String.valueOf(System.currentTimeMillis());
