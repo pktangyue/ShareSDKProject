@@ -155,7 +155,7 @@ public class Demo : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 		
 		Hashtable content = new Hashtable();
-		content["text"] = "this is a test string.";
+		content["content"] = "this is a test string.";
 		content["title"] = "test title";
 		content["description"] = "test description";
 		content["url"] = "http://www.gumichina.com";

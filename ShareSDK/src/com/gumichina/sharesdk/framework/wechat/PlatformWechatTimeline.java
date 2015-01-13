@@ -79,8 +79,8 @@ public class PlatformWechatTimeline extends Platform
 		 hash.get("imageData"));
 		 image.imagePath = (String) hash.get("imageFilePath");
 
-//		WXWebpageObject webpage = new WXWebpageObject();
-//		webpage.webpageUrl = hash.get("url").toString();
+		WXWebpageObject webpage = new WXWebpageObject();
+		webpage.webpageUrl = hash.get("url").toString();
 
 		WXMediaMessage msg = new WXMediaMessage();
 		msg.mediaObject = image;

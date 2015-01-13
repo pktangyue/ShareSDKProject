@@ -7,49 +7,13 @@
 //
 
 #import "ShareSDKUnity3DBridge.h"
-#import <ShareSDK/ShareSDK.h>
-#import <SHareSDK/ShareSDK+Utils.h>
-#import <AGCommon/CMRegexKitLite.h>
-#import <AGCommon/UIDevice+Common.h>
 
 #define INHERITED_VALUE_STR @"{inherited}"
 
 #define __SHARESDK_WECHAT__
-#define __SHARESDK_YIXIN__
-#define __SHARESDK_PINTEREST__
-#define __SHARESDK_GOOGLEPLUS__
-#define __SHARESDK_QQ__
-#define __SHARESDK_RENREN__
-#define __SHARESDK_TENCENT_WEIBO__
 
 #ifdef __SHARESDK_WECHAT__
 #import "WXApi.h"
-#endif
-
-#ifdef __SHARESDK_YIXIN__
-#import "YXApi.h"
-#endif
-
-#ifdef __SHARESDK_PINTEREST__
-#import <Pinterest/Pinterest.h>
-#endif
-
-#ifdef __SHARESDK_GOOGLEPLUS__
-#import <GoogleOpenSource/GoogleOpenSource.h>
-#import <GooglePlus/GooglePlus.h>
-#endif
-
-#ifdef __SHARESDK_QQ__
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
-#endif
-
-#ifdef __SHARESDK_RENREN__
-#import <RennSDK/RennSDK.h>
-#endif
-
-#ifdef __SHARESDK_TENCENT_WEIBO__
-#import "WeiboApi.h"
 #endif
 
 static UIView *_refView = nil;
