@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_0;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -50,25 +50,8 @@
      <Compile Include="Assets\Plugins\MiniJSON.cs" />
      <Compile Include="Assets\Plugins\ShareSDK.cs" />
      <Compile Include="Assets\Plugins\iOS\ShareSDKForiOS.cs" />
-     <None Include="Assets\Plugins\Android\res\drawable\skyblue_platform_list_item.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_share_platform_list.xml" />
-     <None Include="Assets\Plugins\Android\res\values\ssdk_strings.xml" />
-     <None Include="Assets\Plugins\Android\res\values\oks_strings.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable-xhdpi\ssdk_oks_shake_to_share_back.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\res\values-en\ssdk_strings.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_share_platform_list_item.xml" />
-     <None Include="Assets\Plugins\Android\bin\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable\skyblue_platform_list_selector.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable\skyblue_platform_list_item_selected.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_editpage_inc_image_layout.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_share_actionbar.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_editpage.xml" />
-     <None Include="Assets\Plugins\Android\res\drawable\classic_platform_corners_bg.xml" />
-     <None Include="Assets\Plugins\Android\res\values-en\oks_strings.xml" />
      <None Include="Assets\Plugins\Android\assets\ShareSDK.xml" />
-     <None Include="Assets\Plugins\Android\res\layout\skyblue_editpage_at_layout.xml" />
-     <None Include="Assets\Plugins\Android\res\values\instapaper_strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
