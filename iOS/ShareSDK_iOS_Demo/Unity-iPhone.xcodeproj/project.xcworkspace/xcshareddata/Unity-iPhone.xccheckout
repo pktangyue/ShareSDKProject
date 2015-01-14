@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D367B43-3D1C-4764-BA99-13D7CA5DE94A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Unity-iPhone</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3500853C5F3B18C78D0379D419EDEEE5B737E396</key>
+		<string>github.com:pktangyue/ShareSDKProject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS/ShareSDK_iOS_Demo/Unity-iPhone.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3500853C5F3B18C78D0379D419EDEEE5B737E396</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:pktangyue/ShareSDKProject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3500853C5F3B18C78D0379D419EDEEE5B737E396</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3500853C5F3B18C78D0379D419EDEEE5B737E396</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShareSDKProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
