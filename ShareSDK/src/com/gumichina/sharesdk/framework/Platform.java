@@ -66,6 +66,8 @@ public abstract class Platform
 
 	protected byte[] convertBytes(ArrayList<Integer> list)
 	{
+		if (list == null)
+			return null;
 		byte[] ret = new byte[list.size()];
 		Iterator<Integer> iterator = list.iterator();
 		for (int i = 0; i < ret.length; i++)

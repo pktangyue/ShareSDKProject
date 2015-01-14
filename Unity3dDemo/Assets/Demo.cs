@@ -106,12 +106,13 @@ public class Demo : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 
 		Hashtable content = new Hashtable();
+		content["text"] = "this is a test string.";
 		content["title"] = "test title";
 		content["description"] = "test description";
-		content["imageData"] = bytes;
 		content["url"] = "http://www.gumichina.com/";
-		string str=string.Join(",",bytes.Select(t=>t.ToString()).ToArray());
-		Debug.Log(str);
+		//content["imageData"] = bytes;
+		//string str=string.Join(",",bytes.Select(t=>t.ToString()).ToArray());
+		//Debug.Log(str);
 		//content["imageFilePath"] = filename;
 		
 		ShareResultEvent evt = new ShareResultEvent(ShareResultHandler);
@@ -155,11 +156,14 @@ public class Demo : MonoBehaviour {
 		yield return new WaitForEndOfFrame();
 		
 		Hashtable content = new Hashtable();
-		content["content"] = "this is a test string.";
+		content["text"] = "this is a test string.";
 		content["title"] = "test title";
 		content["description"] = "test description";
 		content["url"] = "http://www.gumichina.com";
-		content["imageData"] = bytes;
+		//content["imageData"] = bytes;
+		//string str=string.Join(",",bytes.Select(t=>t.ToString()).ToArray());
+		//Debug.Log(str);
+		//content["imageFilePath"] = filename;
 
 		ShareResultEvent evt = new ShareResultEvent(ShareResultHandler);
 		ShareSDK.shareContent (PlatformType.SinaWeibo, content, evt);

@@ -118,7 +118,7 @@ public class PlatformSinaWeibo extends Platform
 		}
 
 		byte[] bytes = convertBytes((ArrayList<Integer>) hash.get("imageData"));
-		if (bytes.length > 0)
+		if (bytes != null && bytes.length > 0)
 		{
 			ImageObject imageObject = new ImageObject();
 			imageObject.imageData = bytes;
