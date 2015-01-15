@@ -10,12 +10,6 @@
 
 #include "ShareSDK.h"
 
-#define __SHARESDK_WECHAT__
-
-#ifdef __SHARESDK_WECHAT__
-#import "WXApi.h"
-#endif
-
 #if defined (__cplusplus)
 extern "C" {
 #endif
@@ -87,10 +81,6 @@ extern "C" {
     {
         NSString *appKeyStr = [NSString stringWithCString:appKey encoding:NSUTF8StringEncoding];
         [ShareSDK registerApp:appKeyStr];
-        
-#ifdef __SHARESDK_WECHAT__
-        //[ShareSDK importWeChatClass:[WXApi class]];
-#endif
     }
     
     void __iosShareSDKSetPlatformConfig(int platType, void *configInfo)
@@ -115,23 +105,14 @@ extern "C" {
         }
         
         [ShareSDK authWithType:platType
-                        result:^(SSAuthState state, id<ICMErrorInfo> error) {
+                        result:^(SSAuthState state, NSMutableDictionary * error) {
                             
                             NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
                             [resultDict setObject:[NSNumber numberWithInteger:1] forKey:@"action"];
                             [resultDict setObject:[NSNumber numberWithInteger:state] forKey:@"state"];
                             [resultDict setObject:[NSNumber numberWithInteger:platType] forKey:@"type"];
                             
-                            if (state == SSResponseStateFail && error)
-                            {
-                                NSMutableDictionary *errorDict = [NSMutableDictionary dictionary];
-                                [errorDict setObject:[NSNumber numberWithInteger:[error errorCode]] forKey:@"error_code"];
-                                if ([error errorDescription])
-                                {
-                                    [errorDict setObject:[error errorDescription] forKey:@"error_msg"];
-                                }
-                                [resultDict setObject:errorDict forKey:@"error"];
-                            }
+                            [resultDict setObject:error forKey:@"error"];
                             
                             NSString *resultStr = [ShareSDK jsonStringWithObject:resultDict];
                             UnitySendMessage([observerStr UTF8String], "_callback", [resultStr UTF8String]);
@@ -140,12 +121,10 @@ extern "C" {
     
     void __iosShareSDKCancelAuthorize (int platType)
     {
-        //[ShareSDK cancelAuthWithType:platType];
     }
     
     bool __iosShareSDKHasAuthorized (int platType)
     {
-        //return [ShareSDK hasAuthorizedWithType:platType];
         return true;
     }
     
@@ -200,33 +179,19 @@ extern "C" {
             contentStr = [NSString stringWithCString:content encoding:NSUTF8StringEncoding];
         }
         
-        [ShareSDK shareContent:[ShareSDK jsonObjectWithString:contentStr]
+        NSMutableDictionary* contentDict = [ShareSDK jsonObjectWithString:contentStr];
+        
+        [ShareSDK shareContent:contentDict
                           type:platType
-                        result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                        result:^(ShareType type, SSResponseState state, NSMutableDictionary* error) {
                             
                             NSMutableDictionary *resultDict = [NSMutableDictionary dictionary];
                             [resultDict setObject:[NSNumber numberWithInteger:3] forKey:@"action"];
                             [resultDict setObject:[NSNumber numberWithInteger:state] forKey:@"state"];
-                            [resultDict setObject:[NSNumber numberWithInteger:platType] forKey:@"type"];
-                            [resultDict setObject:[NSNumber numberWithBool:end] forKey:@"end"];
+                            [resultDict setObject:[NSNumber numberWithInteger:type] forKey:@"type"];
                             
-                            if (state == SSResponseStateFail && error)
-                            {
-                                NSMutableDictionary *errorDict = [NSMutableDictionary dictionary];
-                                [errorDict setObject:[NSNumber numberWithInteger:[error errorCode]] forKey:@"error_code"];
-                                if ([error errorDescription])
-                                {
-                                    [errorDict setObject:[error errorDescription] forKey:@"error_msg"];
-                                }
-                                [resultDict setObject:errorDict forKey:@"error"];
-                            }
-                            else if ([statusInfo sourceData])
-                            {
-                                {
-                                    [resultDict setObject:[statusInfo sourceData]
-                                                   forKey:@"share_info"];
-                                }
-                            }
+                            [resultDict setObject:error forKey:@"error"];
+                            [resultDict setObject:contentDict forKey:@"share_info"];
                             
                             NSString *resultStr = [ShareSDK jsonStringWithObject:resultDict];
                             UnitySendMessage([observerStr UTF8String], "_callback", [resultStr UTF8String]);

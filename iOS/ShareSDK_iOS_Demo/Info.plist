@@ -4,26 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.gumichina.${PRODUCT_NAME}</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array><string>armv7</string></array>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>wcat</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>AppIcon57x57.png</string>
@@ -34,6 +18,49 @@
 		<string>AppIcon76x76@2x~ipad.png</string>
 		<string>AppIcon76x76~ipad.png</string>
 	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.gumichina.${PRODUCT_NAME}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weixin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx0a33fd8a4968be1d</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
+	<key>UIInterfaceOrientation</key>
+	<string></string>
+	<key>UIPrerenderedIcon</key>
+	<false/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresPersistentWiFi</key>
+	<false/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -41,18 +68,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
-	<key>UIInterfaceOrientation</key>
-	<string></string>
-	<key>UIPrerenderedIcon</key>
-	<false/>
-	<key>UIRequiresPersistentWiFi</key>
-	<false/>
-	<key>UIStatusBarHidden</key>
-	<true/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleDefault</string>
-	<key>UIApplicationExitsOnSuspend</key>
-	<false/>
 	<key>Unity_LoadingActivityIndicatorStyle</key>
 	<integer>-1</integer>
 </dict>

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Unity-iPhone.xcodeproj">
+      location = "self:ShareSDK.xcodeproj">
    </FileRef>
 </Workspace>

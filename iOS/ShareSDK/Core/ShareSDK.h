@@ -28,4 +28,10 @@
                 type:(ShareType)type
               result:(SSPublishContentEventHandler)result;
 
++ (BOOL)handleOpenURL:(NSURL *)url;
+
++ (BOOL)handleOpenURL:(NSURL *)url
+    sourceApplication:(NSString *)sourceApplication
+           annotation:(id)annotation;
+
 @end

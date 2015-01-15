@@ -33,6 +33,7 @@
 #include "Unity/GlesHelper.h"
 #include "PluginBase/AppDelegateListener.h"
 
+#import "ShareSDK.h"
 
 extern "C" void UnityRunUnitTests();
 
@@ -147,7 +148,15 @@ void UnityInitJoysticks();
 
 	NSDictionary* notifData = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	AppController_SendNotificationWithArg(kUnityOnOpenURL, notifData);
-	return YES;
+    
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation];}
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions

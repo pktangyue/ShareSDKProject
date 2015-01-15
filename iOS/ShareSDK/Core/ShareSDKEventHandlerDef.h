@@ -9,9 +9,6 @@
 #ifndef ShareSDK_ShareSDKEventHandlerDef_h
 #define ShareSDK_ShareSDKEventHandlerDef_h
 
-#include "ICMErrorInfo.h"
-#include "ISSPlatformShareInfo.h"
-
 ///#begin zh-cn
 /**
  *	@brief	授权事件处理器
@@ -29,7 +26,7 @@
  */
 ///#end
 
-typedef void(^SSAuthEventHandler) (SSAuthState state, id<ICMErrorInfo> error);
+typedef void(^SSAuthEventHandler) (SSAuthState state, NSMutableDictionary* error);
 
 ///#begin zh-cn
 /**
@@ -75,6 +72,6 @@ typedef void(^SSAuthEventHandler) (SSAuthState state, id<ICMErrorInfo> error);
  */
 ///#end
 
-typedef void(^SSPublishContentEventHandler) (ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end);
+typedef void(^SSPublishContentEventHandler) (ShareType type, SSResponseState state, NSMutableDictionary* error);
 
 #endif

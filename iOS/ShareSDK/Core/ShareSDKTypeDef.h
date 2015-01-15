@@ -22,8 +22,8 @@
 typedef enum
 {
     ShareTypeSinaWeibo = 1,         /**< 新浪微博 */
-    ShareTypeWeixiSession = 22,     /**< 微信好友 */
-    ShareTypeWeixiTimeline = 23,    /**< 微信朋友圈 */
+    ShareTypeWeixiSession = 2,     /**< 微信好友 */
+    ShareTypeWeixiTimeline = 3,    /**< 微信朋友圈 */
     ShareTypeAny = 99               /**< 任意平台 */
 }
 ShareType;

@@ -56,11 +56,14 @@
 		8AF7755D1799329100341121 /* LifeCycleListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8A292A9817992CE100409BA4 /* LifeCycleListener.mm */; };
 		8AF7756017997D2700341121 /* AppDelegateListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7755F17997D1300341121 /* AppDelegateListener.mm */; };
 		8AFA69D9161605E7009663A5 /* iPhone_OrientationSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA69D8161605E7009663A5 /* iPhone_OrientationSupport.mm */; };
-		8C528CFD1A668F6200E9A45F /* ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C528CF61A668F6200E9A45F /* ShareSDK.m */; };
-		8C528CFE1A668F6200E9A45F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C528CFA1A668F6200E9A45F /* libWeChatSDK.a */; };
+		8C0FCA201A679A1200CEB8C6 /* PlatformContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0FCA1F1A679A1200CEB8C6 /* PlatformContainer.m */; };
+		8C0FCA271A67A2AC00CEB8C6 /* PlatformWechatTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0FCA261A67A2AC00CEB8C6 /* PlatformWechatTimeline.m */; };
 		8C528D001A668F8C00E9A45F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C528CFF1A668F8C00E9A45F /* libsqlite3.dylib */; };
 		8C528D021A66904500E9A45F /* libiPhone-lib-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C528D011A66904500E9A45F /* libiPhone-lib-dev.a */; };
 		8C528D041A66930500E9A45F /* ShareSDKUnity3DBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C528D031A66930500E9A45F /* ShareSDKUnity3DBridge.m */; };
+		8C528D121A6695B500E9A45F /* ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C528D0A1A6695B500E9A45F /* ShareSDK.m */; };
+		8C528D131A6695B500E9A45F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C528D0F1A6695B500E9A45F /* libWeChatSDK.a */; };
+		8C79BE1B1A67BA380079EE18 /* PlatformWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C79BE1A1A67BA380079EE18 /* PlatformWeibo.m */; };
 		D82DCFC30E8000A5005D6AD8 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D82DCFBB0E8000A5005D6AD8 /* main.mm */; };
 		D82DCFC50E8000A5005D6AD8 /* RegisterClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D82DCFBD0E8000A5005D6AD8 /* RegisterClasses.cpp */; };
 		D8A1C7000E80637F000160D4 /* Assembly-CSharp-firstpass.dll.s in Sources */ = {isa = PBXBuildFile; fileRef = D8A1C7000E80637F100160D4 /* Assembly-CSharp-firstpass.dll.s */; };
@@ -102,8 +105,8 @@
 		08B24F75137BFDFA00FBA309 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* wcat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wcat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5623C57317FDCB0800090B9E /* Unity-iPhone Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Unity-iPhone Tests.octest"; path = wcat.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5623C57A17FDCB0900090B9E /* Unity-iPhone Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unity-iPhone Tests-Info.plist"; sourceTree = "<group>"; };
+		5623C57317FDCB0800090B9E /* wcat.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wcat.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5623C57A17FDCB0900090B9E /* ShareSDK Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShareSDK Tests-Info.plist"; sourceTree = "<group>"; };
 		5623C57C17FDCB0900090B9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5623C57E17FDCB0900090B9E /* Unity_iPhone_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unity_iPhone_Tests.m; sourceTree = "<group>"; };
 		5623C58017FDCB0900090B9E /* Unity-iPhone Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unity-iPhone Tests-Prefix.pch"; sourceTree = "<group>"; };
@@ -177,18 +180,23 @@
 		8AF7755F17997D1300341121 /* AppDelegateListener.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateListener.mm; sourceTree = "<group>"; };
 		8AFA69D7161605E7009663A5 /* iPhone_OrientationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_OrientationSupport.h; sourceTree = "<group>"; };
 		8AFA69D8161605E7009663A5 /* iPhone_OrientationSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iPhone_OrientationSupport.mm; sourceTree = "<group>"; };
-		8C528CF31A668F6200E9A45F /* ICMErrorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICMErrorInfo.h; sourceTree = "<group>"; };
-		8C528CF41A668F6200E9A45F /* ISSPlatformShareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSPlatformShareInfo.h; sourceTree = "<group>"; };
-		8C528CF51A668F6200E9A45F /* ShareSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDK.h; sourceTree = "<group>"; };
-		8C528CF61A668F6200E9A45F /* ShareSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSDK.m; sourceTree = "<group>"; };
-		8C528CF71A668F6200E9A45F /* ShareSDKEventHandlerDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKEventHandlerDef.h; sourceTree = "<group>"; };
-		8C528CF81A668F6200E9A45F /* ShareSDKTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKTypeDef.h; sourceTree = "<group>"; };
-		8C528CFA1A668F6200E9A45F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		8C528CFB1A668F6200E9A45F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		8C528CFC1A668F6200E9A45F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		8C0FCA1F1A679A1200CEB8C6 /* PlatformContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformContainer.m; sourceTree = "<group>"; };
+		8C0FCA261A67A2AC00CEB8C6 /* PlatformWechatTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformWechatTimeline.m; path = Wechat/PlatformWechatTimeline.m; sourceTree = "<group>"; };
+		8C0FCA281A67A2C300CEB8C6 /* PlatformWechatTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformWechatTimeline.h; path = Wechat/PlatformWechatTimeline.h; sourceTree = "<group>"; };
 		8C528CFF1A668F8C00E9A45F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8C528D011A66904500E9A45F /* libiPhone-lib-dev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libiPhone-lib-dev.a"; path = "../../../../../../../../Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/Trampoline/Libraries/libiPhone-lib-dev.a"; sourceTree = "<group>"; };
 		8C528D031A66930500E9A45F /* ShareSDKUnity3DBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareSDKUnity3DBridge.m; path = ../../../Unity3dDemo/Assets/Plugins/iOS/ShareSDKUnity3DBridge.m; sourceTree = "<group>"; };
+		8C528D091A6695B500E9A45F /* ShareSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDK.h; sourceTree = "<group>"; };
+		8C528D0A1A6695B500E9A45F /* ShareSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSDK.m; sourceTree = "<group>"; };
+		8C528D0B1A6695B500E9A45F /* ShareSDKEventHandlerDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKEventHandlerDef.h; sourceTree = "<group>"; };
+		8C528D0C1A6695B500E9A45F /* ShareSDKTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKTypeDef.h; sourceTree = "<group>"; };
+		8C528D0F1A6695B500E9A45F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		8C528D101A6695B500E9A45F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		8C528D111A6695B500E9A45F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		8C528D141A669C3300E9A45F /* ISSPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISSPlatform.h; sourceTree = "<group>"; };
+		8C79BE1A1A67BA380079EE18 /* PlatformWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlatformWeibo.m; path = Weibo/PlatformWeibo.m; sourceTree = "<group>"; };
+		8C79BE1C1A67BA7E0079EE18 /* PlatformWeibo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlatformWeibo.h; path = Weibo/PlatformWeibo.h; sourceTree = "<group>"; };
+		8CC7D9651A67938C006F1131 /* PlatformContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlatformContainer.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D82DCFBA0E8000A5005D6AD8 /* iPhone_target_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPhone_target_Prefix.pch; path = Classes/iPhone_target_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D82DCFBB0E8000A5005D6AD8 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = Classes/main.mm; sourceTree = SOURCE_ROOT; };
@@ -231,7 +239,7 @@
 				56BCBA390FCF049A0030C3B2 /* SystemConfiguration.framework in Frameworks */,
 				08B24F76137BFDFA00FBA309 /* iAd.framework in Frameworks */,
 				7F36C11113C5C673007FBDD9 /* CoreMedia.framework in Frameworks */,
-				8C528CFE1A668F6200E9A45F /* libWeChatSDK.a in Frameworks */,
+				8C528D131A6695B500E9A45F /* libWeChatSDK.a in Frameworks */,
 				7F36C11213C5C673007FBDD9 /* CoreVideo.framework in Frameworks */,
 				7F36C11313C5C673007FBDD9 /* AVFoundation.framework in Frameworks */,
 				56B7959B1442E0F20026B3DD /* CoreGraphics.framework in Frameworks */,
@@ -256,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* wcat.app */,
-				5623C57317FDCB0800090B9E /* Unity-iPhone Tests.octest */,
+				5623C57317FDCB0800090B9E /* wcat.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,7 +279,7 @@
 				83B2574E0E63025400468741 /* libiconv.2.dylib */,
 				D8A1C7220E80637F000160D3 /* Libraries */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				8C528CF21A668F6200E9A45F /* ShareSDK */,
+				8C528D051A6695B500E9A45F /* ShareSDK */,
 				5623C57817FDCB0800090B9E /* Unity-iPhone Tests */,
 			);
 			name = CustomTemplate;
@@ -314,7 +322,7 @@
 		5623C57917FDCB0800090B9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5623C57A17FDCB0900090B9E /* Unity-iPhone Tests-Info.plist */,
+				5623C57A17FDCB0900090B9E /* ShareSDK Tests-Info.plist */,
 				5623C57B17FDCB0900090B9E /* InfoPlist.strings */,
 				5623C58017FDCB0900090B9E /* Unity-iPhone Tests-Prefix.pch */,
 			);
@@ -382,29 +390,66 @@
 			path = Unity;
 			sourceTree = "<group>";
 		};
-		8C528CF21A668F6200E9A45F /* ShareSDK */ = {
+		8C0FCA221A67A23800CEB8C6 /* Wechat */ = {
 			isa = PBXGroup;
 			children = (
-				8C528CF31A668F6200E9A45F /* ICMErrorInfo.h */,
-				8C528CF41A668F6200E9A45F /* ISSPlatformShareInfo.h */,
-				8C528CF51A668F6200E9A45F /* ShareSDK.h */,
-				8C528CF61A668F6200E9A45F /* ShareSDK.m */,
-				8C528CF71A668F6200E9A45F /* ShareSDKEventHandlerDef.h */,
-				8C528CF81A668F6200E9A45F /* ShareSDKTypeDef.h */,
-				8C528CF91A668F6200E9A45F /* WeChat */,
+				8C0FCA261A67A2AC00CEB8C6 /* PlatformWechatTimeline.m */,
+				8C0FCA281A67A2C300CEB8C6 /* PlatformWechatTimeline.h */,
+			);
+			name = Wechat;
+			sourceTree = "<group>";
+		};
+		8C528D051A6695B500E9A45F /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				8C528D061A6695B500E9A45F /* Core */,
+				8C528D0D1A6695B500E9A45F /* ThirdParty */,
+				8C0FCA221A67A23800CEB8C6 /* Wechat */,
+				8C79BE191A67BA080079EE18 /* Weibo */,
 			);
 			name = ShareSDK;
 			path = ../ShareSDK;
 			sourceTree = "<group>";
 		};
-		8C528CF91A668F6200E9A45F /* WeChat */ = {
+		8C528D061A6695B500E9A45F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8C528CFA1A668F6200E9A45F /* libWeChatSDK.a */,
-				8C528CFB1A668F6200E9A45F /* WXApi.h */,
-				8C528CFC1A668F6200E9A45F /* WXApiObject.h */,
+				8C528D141A669C3300E9A45F /* ISSPlatform.h */,
+				8CC7D9651A67938C006F1131 /* PlatformContainer.h */,
+				8C0FCA1F1A679A1200CEB8C6 /* PlatformContainer.m */,
+				8C528D091A6695B500E9A45F /* ShareSDK.h */,
+				8C528D0A1A6695B500E9A45F /* ShareSDK.m */,
+				8C528D0B1A6695B500E9A45F /* ShareSDKEventHandlerDef.h */,
+				8C528D0C1A6695B500E9A45F /* ShareSDKTypeDef.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8C528D0D1A6695B500E9A45F /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				8C528D0E1A6695B500E9A45F /* WeChat */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		8C528D0E1A6695B500E9A45F /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				8C528D0F1A6695B500E9A45F /* libWeChatSDK.a */,
+				8C528D101A6695B500E9A45F /* WXApi.h */,
+				8C528D111A6695B500E9A45F /* WXApiObject.h */,
 			);
 			path = WeChat;
+			sourceTree = "<group>";
+		};
+		8C79BE191A67BA080079EE18 /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				8C79BE1A1A67BA380079EE18 /* PlatformWeibo.m */,
+				8C79BE1C1A67BA7E0079EE18 /* PlatformWeibo.h */,
+			);
+			name = Weibo;
 			sourceTree = "<group>";
 		};
 		D82DCFB50E8000A5005D6AD8 /* Classes */ = {
@@ -460,9 +505,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Unity-iPhone */ = {
+		1D6058900D05DD3D006BFB54 /* ShareSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Unity-iPhone" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ShareSDK" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				83D0C1FB0E6C8D5900EBCE5D /* ShellScript */,
@@ -474,14 +519,14 @@
 			);
 			dependencies = (
 			);
-			name = "Unity-iPhone";
+			name = ShareSDK;
 			productName = "iPhone-target";
 			productReference = 1D6058910D05DD3D006BFB54 /* wcat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5623C57217FDCB0800090B9E /* Unity-iPhone Tests */ = {
+		5623C57217FDCB0800090B9E /* ShareSDK Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5623C58517FDCB0900090B9E /* Build configuration list for PBXNativeTarget "Unity-iPhone Tests" */;
+			buildConfigurationList = 5623C58517FDCB0900090B9E /* Build configuration list for PBXNativeTarget "ShareSDK Tests" */;
 			buildPhases = (
 				5623C56F17FDCB0800090B9E /* Sources */,
 				5623C57017FDCB0800090B9E /* Frameworks */,
@@ -492,9 +537,9 @@
 			dependencies = (
 				5623C58217FDCB0900090B9E /* PBXTargetDependency */,
 			);
-			name = "Unity-iPhone Tests";
+			name = "ShareSDK Tests";
 			productName = "Unity-iPhone Tests";
-			productReference = 5623C57317FDCB0800090B9E /* Unity-iPhone Tests.octest */;
+			productReference = 5623C57317FDCB0800090B9E /* wcat.octest */;
 			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
@@ -512,7 +557,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Unity-iPhone" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ShareSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -527,8 +572,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Unity-iPhone */,
-				5623C57217FDCB0800090B9E /* Unity-iPhone Tests */,
+				1D6058900D05DD3D006BFB54 /* ShareSDK */,
+				5623C57217FDCB0800090B9E /* ShareSDK Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -574,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82DCFC30E8000A5005D6AD8 /* main.mm in Sources */,
+				8C0FCA201A679A1200CEB8C6 /* PlatformContainer.m in Sources */,
 				D82DCFC50E8000A5005D6AD8 /* RegisterClasses.cpp in Sources */,
 				D8A1C7000E80637F000160D4 /* Assembly-CSharp-firstpass.dll.s in Sources */,
 				D8A1C7001E80637F000160D4 /* Assembly-CSharp.dll.s in Sources */,
@@ -590,6 +636,7 @@
 				8A3EDDC81615B7C1001839E9 /* SplashScreen.mm in Sources */,
 				8AFA69D9161605E7009663A5 /* iPhone_OrientationSupport.mm in Sources */,
 				8A9FCB131617295F00C05364 /* ActivityIndicator.mm in Sources */,
+				8C0FCA271A67A2AC00CEB8C6 /* PlatformWechatTimeline.m in Sources */,
 				8A592F4B16176267006B38FC /* VideoViewController.mm in Sources */,
 				8AA5D80217ABE9AF007B9910 /* UnityAppController+Rendering.mm in Sources */,
 				8A21AED41622F59300AF8007 /* UnityViewControllerBase.mm in Sources */,
@@ -606,11 +653,12 @@
 				8A4815C117A28E7F003FBFD5 /* UnityAppController+ViewHandling.mm in Sources */,
 				8A07E1061715A5AB000EDC6F /* iAD.mm in Sources */,
 				8A626983171825E900F01461 /* ScriptIntegration.mm in Sources */,
-				8C528CFD1A668F6200E9A45F /* ShareSDK.m in Sources */,
 				8A7057D1171EA29600A1332D /* iAD_Scripting.mm in Sources */,
+				8C528D121A6695B500E9A45F /* ShareSDK.m in Sources */,
 				8AF7755D1799329100341121 /* LifeCycleListener.mm in Sources */,
 				8C528D041A66930500E9A45F /* ShareSDKUnity3DBridge.m in Sources */,
 				8A5C1492174E662D0006EB36 /* RenderPluginDelegate.mm in Sources */,
+				8C79BE1B1A67BA380079EE18 /* PlatformWeibo.m in Sources */,
 				8AF7756017997D2700341121 /* AppDelegateListener.mm in Sources */,
 				8ACB801C177081D4005D0019 /* DeviceSettings.mm in Sources */,
 			);
@@ -629,7 +677,7 @@
 /* Begin PBXTargetDependency section */
 		5623C58217FDCB0900090B9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D6058900D05DD3D006BFB54 /* Unity-iPhone */;
+			target = 1D6058900D05DD3D006BFB54 /* ShareSDK */;
 			targetProxy = 5623C58117FDCB0900090B9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -654,6 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				COPY_PHASE_STRIP = NO;
@@ -674,6 +723,7 @@
 					"\"$(SRCROOT)/Libraries\"",
 					/Users/tangyue/project/shironekoproject/ShareSDKProject/iOS/ShareSDK/WeChat,
 					"$(SYSTEM_APPS_DIR)/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/Trampoline/Libraries",
+					/Users/tangyue/project/shironekoproject/ShareSDKProject/iOS/ShareSDK/ThirdParty/WeChat,
 				);
 				OTHER_CFLAGS = "-mno-thumb";
 				OTHER_LDFLAGS = (
@@ -697,6 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				COPY_PHASE_STRIP = YES;
@@ -714,6 +765,7 @@
 					"\"$(SRCROOT)/Libraries\"",
 					/Users/tangyue/project/shironekoproject/ShareSDKProject/iOS/ShareSDK/WeChat,
 					"$(SYSTEM_APPS_DIR)/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/Trampoline/Libraries",
+					/Users/tangyue/project/shironekoproject/ShareSDKProject/iOS/ShareSDK/ThirdParty/WeChat,
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-mno-thumb";
@@ -757,13 +809,13 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Unity-iPhone Tests/Unity-iPhone Tests-Prefix.pch";
+				GCC_PREFIX_HEADER = "Unity-iPhone Tests/ShareSDK Tests-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Unity-iPhone Tests/Unity-iPhone Tests-Info.plist";
+				INFOPLIST_FILE = "Unity-iPhone Tests/ShareSDK Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = wcat;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -800,7 +852,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Unity-iPhone Tests/Unity-iPhone Tests-Prefix.pch";
+				GCC_PREFIX_HEADER = "Unity-iPhone Tests/ShareSDK Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -811,7 +863,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "Unity-iPhone Tests/Unity-iPhone Tests-Info.plist";
+				INFOPLIST_FILE = "Unity-iPhone Tests/ShareSDK Tests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = wcat;
@@ -862,7 +914,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Unity-iPhone" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ShareSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058950D05DD3E006BFB54 /* Release */,
@@ -871,7 +923,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5623C58517FDCB0900090B9E /* Build configuration list for PBXNativeTarget "Unity-iPhone Tests" */ = {
+		5623C58517FDCB0900090B9E /* Build configuration list for PBXNativeTarget "ShareSDK Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5623C58317FDCB0900090B9E /* Release */,
@@ -880,7 +932,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Unity-iPhone" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ShareSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF5008A954540054247B /* Release */,

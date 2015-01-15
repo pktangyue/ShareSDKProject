@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
                BuildableName = "wcat.app"
-               BlueprintName = "Unity-iPhone"
-               ReferencedContainer = "container:Unity-iPhone.xcodeproj">
+               BlueprintName = "ShareSDK"
+               ReferencedContainer = "container:ShareSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5623C57217FDCB0800090B9E"
                BuildableName = "wcat.octest"
-               BlueprintName = "Unity-iPhone Tests"
-               ReferencedContainer = "container:Unity-iPhone.xcodeproj">
+               BlueprintName = "ShareSDK Tests"
+               ReferencedContainer = "container:ShareSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "wcat.app"
-            BlueprintName = "Unity-iPhone"
-            ReferencedContainer = "container:Unity-iPhone.xcodeproj">
+            BlueprintName = "ShareSDK"
+            ReferencedContainer = "container:ShareSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "wcat.app"
-            BlueprintName = "Unity-iPhone"
-            ReferencedContainer = "container:Unity-iPhone.xcodeproj">
+            BlueprintName = "ShareSDK"
+            ReferencedContainer = "container:ShareSDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
             BuildableName = "wcat.app"
-            BlueprintName = "Unity-iPhone"
-            ReferencedContainer = "container:Unity-iPhone.xcodeproj">
+            BlueprintName = "ShareSDK"
+            ReferencedContainer = "container:ShareSDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,12 +7,13 @@
 //
 
 #import "ShareSDK.h"
+#import "PlatformContainer.h"
 
 @implementation ShareSDK
 
 +(void)registerApp:(NSString *)appKey
 {
-    
+    [PlatformContainer shareInstance];
 }
 
 + (NSMutableDictionary *)jsonObjectWithString:(NSString *)string
@@ -42,7 +43,8 @@
 + (void)connectPlatformWithType:(ShareType)type
                         appInfo:(NSDictionary *)appInfo
 {
-    
+    id<ISSPlatform> platform = [[PlatformContainer shareInstance] getPlatform:type];
+    [platform registerApp:appInfo];
 }
 
 + (void)authWithType:(ShareType)type
@@ -55,7 +57,23 @@
                 type:(ShareType)type
               result:(SSPublishContentEventHandler)result
 {
-    
+    id<ISSPlatform> platform = [[PlatformContainer shareInstance] getPlatform:type];
+    [platform share:content
+             result:result];
+}
+
++ (BOOL)handleOpenURL:(NSURL *)url
+{
+    return [[PlatformContainer shareInstance] handleOpenURL:url];
+}
+
++ (BOOL)handleOpenURL:(NSURL *)url
+    sourceApplication:(NSString *)sourceApplication
+           annotation:(id)annotation
+{
+    return [[PlatformContainer shareInstance] handleOpenURL:url
+                                          sourceApplication:sourceApplication
+                                                 annotation:annotation];
 }
 
 @end
