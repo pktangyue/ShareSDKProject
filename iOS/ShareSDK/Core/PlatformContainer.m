@@ -70,12 +70,12 @@ static id shareInstance = nil;
     for (id<ISSPlatform> platform in platforms) {
         BOOL ret = [platform handleOpenURL:url
                                   delegate:platform];
-        if (!ret)
+        if (ret)
         {
             return ret;
         }
     }
-    return YES;
+    return FALSE;
 }
 
 - (BOOL)handleOpenURL:(NSURL *)url
@@ -87,12 +87,12 @@ static id shareInstance = nil;
                          sourceApplication:sourceApplication
                                 annotation:annotation
                                   delegate:platform];
-        if (!ret)
+        if (ret)
         {
             return ret;
         }
     }
-    return YES;
+    return FALSE;
 }
 
 @end
